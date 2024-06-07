@@ -1,8 +1,6 @@
-name: Solution CI
+name: C++ Build and Test
 
-on:
-  push:
-    branches: [ main ]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -10,15 +8,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+
     - name: Install dependencies
-      run: sudo apt-get install -y cmake make g++
-    - name: Build
-      run: |
-        cmake -B build -S .
-        cd build
-        make
-    - name: Test
+      run: sudo apt-get update && sudo apt-get install -y cmake make g++
+
+    - name: Create build directory
+      run: cmake -B build -S .
+
+    - name: Build the project
+      run: cmake --build build
+
+    - name: Run tests
       run: |
         cd build
         make test
