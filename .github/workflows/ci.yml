@@ -14,8 +14,7 @@ jobs:
       run: sudo apt-get install -y cmake make g++
 
     - name: Build code
-      run: |
-        cd dev_application
+      run: 
         cmake -B build -S .
         cd build
         make
