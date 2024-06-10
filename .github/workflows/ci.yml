@@ -19,7 +19,7 @@ jobs:
         
     - name: Open build directory
       run: cd build
-          ls
+           ls
     
     # - name: Make 
     #   run: ls
