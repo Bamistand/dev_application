@@ -22,7 +22,7 @@ jobs:
     - name: Run the application
       run: 
         cd build
-        ./src/assignment_cli
+        make src
 
     - name: Run tests
       run: 
