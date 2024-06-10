@@ -17,9 +17,11 @@ jobs:
       run: 
         cmake -B build -S .
         
-    - name: Make 
+    - name: Open build directory
       run: cd build
-            make
+    
+    - name: Make 
+      run: make
 
     - name: Run the application
       run: 
