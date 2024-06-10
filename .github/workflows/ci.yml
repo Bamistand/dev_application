@@ -19,9 +19,10 @@ jobs:
         
     - name: Open build directory
       run: cd build
+          ls
     
-    - name: Make 
-      run: ls
+    # - name: Make 
+    #   run: ls
 
     - name: Run the application
       run: 
