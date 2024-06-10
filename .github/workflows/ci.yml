@@ -16,12 +16,14 @@ jobs:
     - name: Build code
       run: 
         cmake -B build -S .
-        cd build
-        make
+        
+    - name: Make 
+      run: cd build
+            make
 
     - name: Run the application
       run: 
-        mkdir ./src/assignment_cli
+        ./src/assignment_cli
 
     - name: Run tests
       run: make test
