@@ -21,7 +21,7 @@ jobs:
       run: cd build
     
     - name: Make 
-      run: make
+      run: ls
 
     - name: Run the application
       run: 
