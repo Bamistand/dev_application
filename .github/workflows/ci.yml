@@ -20,7 +20,11 @@ jobs:
         make
 
     - name: Run the application
-      run: .build/src/assignment_cli
+      run: 
+        cd build
+        ./src/assignment_cli
 
     - name: Run tests
-      run: .build/test/assignment_test
+      run: 
+        cd build
+        make test
